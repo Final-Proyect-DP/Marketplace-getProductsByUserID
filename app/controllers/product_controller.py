@@ -14,4 +14,7 @@ def get_products_by_user_id(userId):
     return jsonify({"message": "Products fetched successfully", "products": [product.to_dict() for product in products]}), 200
 
 
+@product_bp.route('/health', methods=['GET'])
+def health_check():
+    return jsonify(status='OK', service='user-read'), 200
 
